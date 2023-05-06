@@ -336,6 +336,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172323692}
   m_CullTransparentMesh: 1
+--- !u!1 &201199674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7261863893628943443, guid: bae4a9f113c767228a2492f1218e6b5d, type: 3}
+  m_PrefabInstance: {fileID: 7261863893388043049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &333850646
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +487,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7261863893628943442, guid: bae4a9f113c767228a2492f1218e6b5d, type: 3}
   m_PrefabInstance: {fileID: 7261863893388043049}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &375250812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201199674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742b088dae343d541b5d4a8ad419d4d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireDelta: 0.5
+  projectile: {fileID: 9101882860034520241, guid: 4549191aabbcc6f049b9d6994e942de6, type: 3}
 --- !u!1 &398744632
 GameObject:
   m_ObjectHideFlags: 0
@@ -6178,7 +6197,7 @@ MonoBehaviour:
   minX: 3
   maxY: 4
   minY: -4
-  timeBetweenSpawn: 1.5
+  timeBetweenSpawn: 1
 --- !u!4 &1045774594
 Transform:
   m_ObjectHideFlags: 0
@@ -6969,7 +6988,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7350,7 +7369,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

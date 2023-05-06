@@ -24,5 +24,10 @@ public class Bird : MonoBehaviour
         {   
             Destroy(plane.gameObject);
         }
+
+        else if(collision.tag == "Rocket")
+        {   
+            Destroy(this.gameObject);
+        }
     }
 }

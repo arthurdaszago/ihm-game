@@ -26,7 +26,6 @@ public class Plane : MonoBehaviour
 
         float planeY = rb.position.y;
 
-        UnityEngine.Debug.Log(planeY);
 
         if (directionY == 1)
         {
