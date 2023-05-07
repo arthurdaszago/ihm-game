@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Border
   - Plane
+  - Rocket
   layers:
   - Default
   - TransparentFX

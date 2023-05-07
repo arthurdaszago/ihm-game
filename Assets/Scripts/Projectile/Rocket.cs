@@ -4,58 +4,58 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    public float fireDelta = 0.5f;
-    public GameObject projectile;
-
-    private float nextFire = 0.5f;
-    private float myTime = 0.0f;
     private Rigidbody2D rb;
+    public GameObject projectile;
+    private GameObject rocket;
 
-    private GameObject plane;
+    private float myTime = 0.0f;
+    public float fireDelta = 0.5f;
+    private float nextFire = 1f;
 
-    void Start()
-    {
-        
-        rb.GetComponent<Rigidbody2D>();
-        plane = GameObject.FindGameObjectWithTag("Plane");
-    }
+    private float rocketSpeed = 22f;
 
     // Update is called once per frame
     void Update()
     {
-
-        float rocketY = plane.transform.position.y - 100;
-        float rocketX = plane.transform.position.x;
-
         myTime = myTime + Time.deltaTime;
 
         if (Input.GetButton("Fire1") && myTime > nextFire)
         {
-            nextFire = myTime + fireDelta;
-            Instantiate(projectile, plane.transform.position, plane.transform.rotation) as GameObject;
 
-            // create code here that animates the newProjectile
+            nextFire = myTime + fireDelta;
+            Spawn();
 
             nextFire = nextFire - myTime;
             myTime = 0.0F;
         }
+    }
 
-        if (projectile != null)
+    void Spawn()
+    {
+        Vector3 newPosition = new Vector3(transform.position.x, transform.position.y - 1.55f, 0);
+        rocket = Instantiate(projectile, newPosition, transform.rotation);
+    }
+
+    void FixedUpdate()
+    {
+        if (rocket != null)
         {
-            rb.velocity = new Vector2(plane.transform.position.y * 10, 0);
+            rocket.transform.position = rocket.transform.position + new Vector3(rocketSpeed * Time.deltaTime, 0.10f, 0);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Border")
+        if (collision.tag == "Border")
         {
             Destroy(this.gameObject);
-        } 
-        
-        else if(collision.tag == "Bird")
-        {   
+        }
+
+        else if (collision.tag == "Bird")
+        {
             Destroy(this.gameObject);
+            Destroy(rocket.GetComponent<Rigidbody2D>());
+            Destroy(rocket.GetComponent<BoxCollider2D>());
         }
     }
 }
